@@ -1,6 +1,0 @@
-framework module Pods_roadscape {
-  umbrella header "Pods-roadscape-umbrella.h"
-
-  export *
-  module * { export * }
-}

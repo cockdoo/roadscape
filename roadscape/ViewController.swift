@@ -1,18 +1,21 @@
-//
-//  ViewController.swift
-//  roadscape
-//
-//  Created by taiga-sano on 2017/06/04.
-//  Copyright © 2017年 taiga-sano. All rights reserved.
-//
-
 import UIKit
+import RxSwift
+import RxCocoa
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textField: UITextField!
+
+    let disposeBag = DisposeBag()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        textField.rx_text
+            .map {$0}
+            .bindTo(label.rx_text)
+            .addDisposableTo(disposeBag)
     }
 
     override func didReceiveMemoryWarning() {

@@ -13,9 +13,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        let storyboard = UIStoryboard(name: "HomeViewController", bundle: nil)
+        let viewController: UIViewController = storyboard.instantiateInitialViewController()!
+        window?.rootViewController = viewController
+
+        LocationController.sharedInstance.startUpdatingLocation()
+        print("hello, world!")
         return true
     }
 

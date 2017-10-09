@@ -1,20 +1,50 @@
 PODS:
-  - RxBlocking (3.6.1):
-    - RxSwift (~> 3.6)
-  - RxCocoa (3.6.1):
-    - RxSwift (~> 3.6)
-  - RxSwift (3.6.1)
+  - Realm (2.10.2):
+    - Realm/Headers (= 2.10.2)
+  - Realm/Headers (2.10.2)
+  - RealmSwift (2.10.2):
+    - Realm (= 2.10.2)
+  - RxBlocking (4.0.0-beta.1):
+    - RxSwift (~> 4.0.0-beta.1)
+  - RxCocoa (4.0.0-beta.1):
+    - RxSwift (~> 4.0.0-beta.1)
+  - RxSwift (4.0.0-beta.1)
 
 DEPENDENCIES:
-  - RxBlocking (~> 3.0)
-  - RxCocoa (~> 3.0)
-  - RxSwift (~> 3.0)
+  - RealmSwift
+  - RxBlocking (from `https://github.com/ReactiveX/RxSwift`, branch `rxswift4.0-swift4.0`)
+  - RxCocoa (from `https://github.com/ReactiveX/RxSwift`, branch `rxswift4.0-swift4.0`)
+  - RxSwift (from `https://github.com/ReactiveX/RxSwift`, branch `rxswift4.0-swift4.0`)
+
+EXTERNAL SOURCES:
+  RxBlocking:
+    :branch: rxswift4.0-swift4.0
+    :git: https://github.com/ReactiveX/RxSwift
+  RxCocoa:
+    :branch: rxswift4.0-swift4.0
+    :git: https://github.com/ReactiveX/RxSwift
+  RxSwift:
+    :branch: rxswift4.0-swift4.0
+    :git: https://github.com/ReactiveX/RxSwift
+
+CHECKOUT OPTIONS:
+  RxBlocking:
+    :commit: 95a51a602983eb0bc8a9abf3d0342e5e021cec36
+    :git: https://github.com/ReactiveX/RxSwift
+  RxCocoa:
+    :commit: 95a51a602983eb0bc8a9abf3d0342e5e021cec36
+    :git: https://github.com/ReactiveX/RxSwift
+  RxSwift:
+    :commit: 95a51a602983eb0bc8a9abf3d0342e5e021cec36
+    :git: https://github.com/ReactiveX/RxSwift
 
 SPEC CHECKSUMS:
-  RxBlocking: 4f4bd5732e8b952e54ae8a57739bcfb645de12bc
-  RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
-  RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
+  RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
+  RxBlocking: d5f5e62ff9ac07641a8d0214d9a8b00f1750aae5
+  RxCocoa: 009b86b0b158d4a7e4a5fc29bbdc0688c44fa3bb
+  RxSwift: 9488787dfac649ffc1c4fddf3a3b4d6823d0b392
 
-PODFILE CHECKSUM: 60dc330c0db5fc0b4d3d8ca0dd418464601b9814
+PODFILE CHECKSUM: 3557852da8b415a9ab63521978796563a608f008
 
 COCOAPODS: 1.2.1

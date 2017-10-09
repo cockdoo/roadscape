@@ -1,4 +1,3 @@
-# Uncomment the next line to define a global platform for your project
 platform :ios, '9.0'
 
 target 'roadscape' do
@@ -6,14 +5,17 @@ target 'roadscape' do
   use_frameworks!
 
   # Pods for roadscape
-  pod 'RxSwift',    '~> 3.0'
-  pod 'RxCocoa',    '~> 3.0'
+  pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
+  pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
+  pod 'RealmSwift'
+
 
   target 'roadscapeTests' do
     inherit! :search_paths
     # Pods for testing
-    pod 'RxBlocking', '~> 3.0'
-    # pod 'RxTests',    '~> 3.0'
+    pod 'RxBlocking', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
+    # pod 'RxTests', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
+    pod 'RealmSwift'
   end
 
   target 'roadscapeUITests' do

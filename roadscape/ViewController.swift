@@ -7,15 +7,26 @@ class ViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var textField: UITextField!
 
-    let disposeBag = DisposeBag()
+
+    let presenter = Presenter()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        textField.rx_text
-            .map {$0}
-            .bindTo(label.rx_text)
-            .addDisposableTo(disposeBag)
+        let disposable = presenter.event.subscribe(
+            onNext: { value in
+                // 通常イベント発生時の処理
+                print("hoge")
+        },
+            onError: { error in
+                // エラー発生時の処理
+        },
+            onCompleted: {
+                // 完了時の処理
+        }
+        )
+
+        presenter.doSomething()
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,3 +37,15 @@ class ViewController: UIViewController {
 
 }
 
+
+class Presenter {
+    private let eventSubject = PublishSubject<Int>()
+
+    var event: Observable<Int> { print("return eventSubject"); return eventSubject }
+
+    func doSomething() {
+        print("do something")
+        // 略
+        eventSubject.onNext(1)  // イベント発行
+    }
+}

@@ -21,7 +21,7 @@ class RecordViewController: UIViewController {
         locationController = LocationController()
         recordController = RecordController()
         currentRecordButtonType = .start
-        mapView.setCenter(mapView.userLocation.coordinate, animated: true)
+        mapView.setCenter(mapView.userLocation.coordinate, animated: false)
         mapView.userTrackingMode = .follow
         finishButton.isHidden = true
 

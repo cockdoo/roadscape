@@ -1,34 +1,51 @@
 import UIKit
 import RealmSwift
 
-class HomeViewController: UIViewController {
+class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
+    @IBOutlet weak var collectionView: UICollectionView!
+    let cellIdentifer = "RecordCollectionViewCell"
+
+    var records: Results<RecordTable>?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        let nib: UINib = UINib(nibName: cellIdentifer, bundle: nil)
+        collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifer)
+
+        getRecordsFromLocal()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        showTableContent()
+    func getRecordsFromLocal() {
+        records = RecordController().getHomeItem()
     }
 
-    func showTableContent() {
-        let myRealm = try! Realm()
-        let rows = myRealm.objects(RecordTable.self)
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: view.bounds.width, height: RecordCollectionViewCell.height)
+    }
 
-        for row in rows {
-            let hoge = row.id
-            print(hoge)
-            print(row.title)
-//            print(row.records)
-        }
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
 
-        print("----- ▼ テーブルの中身 -----")
-        print(rows)
-        print(rows.last?.id)
-        print("----- ▲ テーブルの中身 -----")
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        guard records != nil else { return 1 }
+        return records!.count
+    }
 
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: RecordCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifer, for: indexPath) as! RecordCollectionViewCell
+        cell.update(records![indexPath.row].title)
+        return cell
+    }
 
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let viewController: PlayViewController = UIStoryboard.init(name: "PlayViewController", bundle: nil).instantiateInitialViewController() as! PlayViewController
+        viewController.inject(records![indexPath.row])
+        navigationController?.pushViewController(viewController, animated: true)
     }
 
     @IBAction func didTouchButton(_ sender: Any) {

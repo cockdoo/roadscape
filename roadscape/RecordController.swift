@@ -9,9 +9,9 @@ class RecordTable: Object {
 }
 
 class RSRecord: Object {
-    @objc var lat: Double = 0
-    @objc var lng: Double = 0
-    @objc var createdDate: Date = Date()
+    @objc dynamic var lat: Double = 0
+    @objc dynamic var lng: Double = 0
+    @objc dynamic var createdDate: Date = Date()
 }
 
 class RecordController: NSObject {
@@ -79,5 +79,10 @@ class RecordController: NSObject {
     func getIncrementId() -> Int {
         let realm = try! Realm()
         return (realm.objects(RecordTable.self).max(ofProperty: "id") ?? 0) + 1
+    }
+
+    func getHomeItem() -> Results<RecordTable> {
+        let realm = try! Realm()
+        return realm.objects(RecordTable.self)
     }
 }

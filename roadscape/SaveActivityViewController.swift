@@ -1,21 +1,21 @@
 import UIKit
 
-class SaveRecordViewController: UIViewController {
+class SaveActivityViewController: UIViewController {
 
     @IBOutlet weak var titleTextField: UITextField!
-    var recordController: RecordController!
+    var activityController: ActivityController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    func inject(_ recordConroller: RecordController) {
-        self.recordController = recordConroller
+    func inject(_ activityController: ActivityController) {
+        self.activityController = activityController
     }
 
     @IBAction func touchedSaveButton(_ sender: Any) {
         guard titleTextField.text != "" else { return }
-        recordController.saveRecord(title: titleTextField.text!)
+        activityController.saveActivity(title: titleTextField.text!)
 
         dismiss(animated: true, completion: nil)
     }

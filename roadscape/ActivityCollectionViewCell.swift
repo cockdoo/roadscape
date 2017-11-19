@@ -1,6 +1,6 @@
 import UIKit
 
-class RecordCollectionViewCell: UICollectionViewCell {
+class ActivityCollectionViewCell: UICollectionViewCell {
     static let height: CGFloat = 100
     @IBOutlet weak var titleLabel: UILabel!
 

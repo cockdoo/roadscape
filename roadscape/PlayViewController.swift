@@ -3,7 +3,7 @@ import MapKit
 
 class PlayViewController: UIViewController, MKMapViewDelegate {
 
-    var record: RecordTable!
+    var activity: ActivityTable!
     @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {
@@ -11,8 +11,8 @@ class PlayViewController: UIViewController, MKMapViewDelegate {
 
         var coordinates = [CLLocationCoordinate2D]()
 
-        for record in record.records {
-            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(record.lat), longitude: CLLocationDegrees(record.lng))
+        for trackPoint in activity.trackPoints {
+            let coordinate = CLLocationCoordinate2D(latitude: CLLocationDegrees(trackPoint.lat), longitude: CLLocationDegrees(trackPoint.lng))
             coordinates.append(coordinate)
         }
         let line: MKPolyline = MKPolyline(coordinates: coordinates, count: coordinates.count)
@@ -32,8 +32,8 @@ class PlayViewController: UIViewController, MKMapViewDelegate {
         return myPolyLineRendere
     }
 
-    func inject(_ record: RecordTable) {
-        self.record = record
+    func inject(_ activity: ActivityTable) {
+        self.activity = activity
     }
 
     @IBAction func touchedPlayButton(_ sender: Any) {

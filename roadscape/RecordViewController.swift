@@ -3,7 +3,7 @@ import MapKit
 
 class RecordViewController: UIViewController {
     private var locationController: LocationController!
-    private var recordController: RecordController!
+    private var activityController: ActivityController!
     private var currentRecordButtonType: recordButtonType!
     @IBOutlet weak var mapView: MKMapView!
 
@@ -19,11 +19,13 @@ class RecordViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         locationController = LocationController()
-        recordController = RecordController()
+        activityController = ActivityController()
+
         currentRecordButtonType = .start
+        finishButton.isHidden = true
+
         mapView.setCenter(mapView.userLocation.coordinate, animated: false)
         mapView.userTrackingMode = .follow
-        finishButton.isHidden = true
 
         locationController.requestAuthorization()
         locationController.locationManager.startUpdatingLocation()
@@ -32,18 +34,18 @@ class RecordViewController: UIViewController {
     @IBAction func didTouchRecordButton(_ sender: Any) {
         switch currentRecordButtonType {
         case .start:
-            recordController.startRecord()
+            activityController.startRecord()
             currentRecordButtonType = .pause
             recordButton.setTitle("pause", for: .normal)
             break
         case .pause:
-            recordController.pauseRecord()
+            activityController.pauseRecord()
             currentRecordButtonType = .restart
             recordButton.setTitle("restart", for: .normal)
             finishButton.isHidden = false
             break
         case .restart:
-            recordController.restartRecord()
+            activityController.restartRecord()
             currentRecordButtonType = .pause
             recordButton.setTitle("pause", for: .normal)
             finishButton.isHidden = true
@@ -54,8 +56,8 @@ class RecordViewController: UIViewController {
     }
 
     @IBAction func touchedFinishButton(_ sender: Any) {
-        let savaRecordViewController: SaveRecordViewController = UIStoryboard(name: "SaveRecordViewController", bundle: nil).instantiateInitialViewController() as! SaveRecordViewController
-        savaRecordViewController.inject(recordController)
-        navigationController?.pushViewController(savaRecordViewController, animated: true)
+        let saveActivityViewController: SaveActivityViewController = UIStoryboard(name: "SaveActivityViewController", bundle: nil).instantiateInitialViewController() as! SaveActivityViewController
+        saveActivityViewController.inject(activityController)
+        navigationController?.pushViewController(saveActivityViewController, animated: true)
     }
 }

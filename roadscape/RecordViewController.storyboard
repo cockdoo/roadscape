@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VCR-6P-IJ7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VCR-6P-IJ7">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -34,21 +34,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-gf-5sI">
-                                <rect key="frame" x="213" y="598" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="REu-M0-B3I">
+                                <rect key="frame" x="0.0" y="64" width="375" height="362"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="362" id="pIr-KO-qU2"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HNi-gf-5sI">
+                                <rect key="frame" x="187.5" y="617" width="187.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Z3z-hv-2UI"/>
+                                </constraints>
                                 <state key="normal" title="finish"/>
                                 <connections>
                                     <action selector="touchedFinishButton:" destination="NjM-fD-043" eventType="touchUpInside" id="NrE-Xl-C7F"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="REu-M0-B3I">
-                                <rect key="frame" x="0.0" y="157" width="375" height="362"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uC4-iX-e5I">
-                                <rect key="frame" x="50" y="598" width="113" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uC4-iX-e5I">
+                                <rect key="frame" x="0.0" y="617" width="187.5" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="RjK-xN-BBw"/>
+                                </constraints>
                                 <state key="normal" title="start"/>
                                 <connections>
                                     <action selector="didTouchRecordButton:" destination="NjM-fD-043" eventType="touchUpInside" id="wDy-SS-2Ca"/>
@@ -56,6 +62,17 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HNi-gf-5sI" firstAttribute="width" secondItem="uC4-iX-e5I" secondAttribute="width" id="3AM-jT-WcC"/>
+                            <constraint firstItem="fjL-sq-niM" firstAttribute="bottom" secondItem="HNi-gf-5sI" secondAttribute="bottom" constant="20" id="5E6-N0-stD"/>
+                            <constraint firstItem="uC4-iX-e5I" firstAttribute="leading" secondItem="fjL-sq-niM" secondAttribute="leading" id="7Ip-ca-9a1"/>
+                            <constraint firstItem="REu-M0-B3I" firstAttribute="top" secondItem="fjL-sq-niM" secondAttribute="top" id="DBP-Vu-E3g"/>
+                            <constraint firstItem="fjL-sq-niM" firstAttribute="bottom" secondItem="uC4-iX-e5I" secondAttribute="bottom" constant="20" id="IkA-jx-hmT"/>
+                            <constraint firstItem="HNi-gf-5sI" firstAttribute="leading" secondItem="uC4-iX-e5I" secondAttribute="trailing" id="Lcz-HG-4D4"/>
+                            <constraint firstItem="REu-M0-B3I" firstAttribute="leading" secondItem="fjL-sq-niM" secondAttribute="leading" id="RQq-aW-hm2"/>
+                            <constraint firstItem="REu-M0-B3I" firstAttribute="trailing" secondItem="fjL-sq-niM" secondAttribute="trailing" id="W8l-7X-Avu"/>
+                            <constraint firstItem="fjL-sq-niM" firstAttribute="trailing" secondItem="HNi-gf-5sI" secondAttribute="trailing" id="nBv-ch-9BK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="fjL-sq-niM"/>
                     </view>
                     <navigationItem key="navigationItem" id="UOR-U3-ckq"/>

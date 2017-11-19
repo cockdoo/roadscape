@@ -9,23 +9,21 @@
 /* Begin PBXBuildFile section */
 		17F203C089E1A15C9778F45F /* Pods_roadscapeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF3C3D6A305A670DDE5F1F6 /* Pods_roadscapeTests.framework */; };
 		25B5E929D88B8F479AD33F57 /* Pods_roadscapeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B33E8EA6733FBA2C2743C813 /* Pods_roadscapeUITests.framework */; };
-		4656C4E31F8B50CC00E242D5 /* RecordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656C4E21F8B50CC00E242D5 /* RecordCollectionViewCell.swift */; };
+		4656C4E31F8B50CC00E242D5 /* ActivityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656C4E21F8B50CC00E242D5 /* ActivityCollectionViewCell.swift */; };
 		4656C4E71F8B5AEC00E242D5 /* PlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4656C4E61F8B5AEC00E242D5 /* PlayViewController.swift */; };
 		4656C4E91F8B5B0000E242D5 /* PlayViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4656C4E81F8B5B0000E242D5 /* PlayViewController.storyboard */; };
-		4656C4EA1F8B625600E242D5 /* RecordCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4656C4E41F8B50D700E242D5 /* RecordCollectionViewCell.xib */; };
-		468B0DA51F89FACA00E6E458 /* RecordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B0DA41F89FACA00E6E458 /* RecordController.swift */; };
-		468B0DA71F8A180F00E6E458 /* SaveRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B0DA61F8A180F00E6E458 /* SaveRecordViewController.swift */; };
-		468B0DA91F8A181700E6E458 /* SaveRecordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B0DA81F8A181700E6E458 /* SaveRecordViewController.storyboard */; };
+		4656C4EA1F8B625600E242D5 /* ActivityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4656C4E41F8B50D700E242D5 /* ActivityCollectionViewCell.xib */; };
+		468B0DA51F89FACA00E6E458 /* ActivityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B0DA41F89FACA00E6E458 /* ActivityController.swift */; };
+		468B0DA71F8A180F00E6E458 /* SaveActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468B0DA61F8A180F00E6E458 /* SaveActivityViewController.swift */; };
+		468B0DA91F8A181700E6E458 /* SaveActivityViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 468B0DA81F8A181700E6E458 /* SaveActivityViewController.storyboard */; };
 		469E5F2F1EE3F3D200193174 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5F2E1EE3F3D200193174 /* AppDelegate.swift */; };
-		469E5F311EE3F3D200193174 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5F301EE3F3D200193174 /* ViewController.swift */; };
-		469E5F341EE3F3D200193174 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469E5F321EE3F3D200193174 /* Main.storyboard */; };
 		469E5F361EE3F3D200193174 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 469E5F351EE3F3D200193174 /* Assets.xcassets */; };
 		469E5F391EE3F3D200193174 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 469E5F371EE3F3D200193174 /* LaunchScreen.storyboard */; };
 		469E5F441EE3F3D200193174 /* roadscapeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5F431EE3F3D200193174 /* roadscapeTests.swift */; };
 		469E5F4F1EE3F3D200193174 /* roadscapeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 469E5F4E1EE3F3D200193174 /* roadscapeUITests.swift */; };
 		46A96B051F89ACEB004E04C5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A96B041F89ACEB004E04C5 /* HomeViewController.swift */; };
 		46A96B071F89ADC0004E04C5 /* HomeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A96B061F89ADC0004E04C5 /* HomeViewController.storyboard */; };
-		46A96B091F89B0D5004E04C5 /* RSLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A96B081F89B0D5004E04C5 /* RSLocation.swift */; };
+		46A96B091F89B0D5004E04C5 /* MyLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A96B081F89B0D5004E04C5 /* MyLocation.swift */; };
 		46A96B0B1F89B158004E04C5 /* LocationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A96B0A1F89B158004E04C5 /* LocationController.swift */; };
 		46A96B0D1F89D67C004E04C5 /* RecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A96B0C1F89D67C004E04C5 /* RecordViewController.swift */; };
 		46A96B0F1F89D688004E04C5 /* RecordViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A96B0E1F89D688004E04C5 /* RecordViewController.storyboard */; };
@@ -52,17 +50,15 @@
 /* Begin PBXFileReference section */
 		3AF5BBD4C363CB1731A92A50 /* Pods-roadscapeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-roadscapeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-roadscapeTests/Pods-roadscapeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		410004BF5652CABEE4D1B23A /* Pods_roadscape.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_roadscape.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4656C4E21F8B50CC00E242D5 /* RecordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordCollectionViewCell.swift; sourceTree = "<group>"; };
-		4656C4E41F8B50D700E242D5 /* RecordCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecordCollectionViewCell.xib; sourceTree = "<group>"; };
+		4656C4E21F8B50CC00E242D5 /* ActivityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCollectionViewCell.swift; sourceTree = "<group>"; };
+		4656C4E41F8B50D700E242D5 /* ActivityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ActivityCollectionViewCell.xib; sourceTree = "<group>"; };
 		4656C4E61F8B5AEC00E242D5 /* PlayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayViewController.swift; sourceTree = "<group>"; };
 		4656C4E81F8B5B0000E242D5 /* PlayViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PlayViewController.storyboard; sourceTree = "<group>"; };
-		468B0DA41F89FACA00E6E458 /* RecordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordController.swift; sourceTree = "<group>"; };
-		468B0DA61F8A180F00E6E458 /* SaveRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveRecordViewController.swift; sourceTree = "<group>"; };
-		468B0DA81F8A181700E6E458 /* SaveRecordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SaveRecordViewController.storyboard; sourceTree = "<group>"; };
+		468B0DA41F89FACA00E6E458 /* ActivityController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityController.swift; sourceTree = "<group>"; };
+		468B0DA61F8A180F00E6E458 /* SaveActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveActivityViewController.swift; sourceTree = "<group>"; };
+		468B0DA81F8A181700E6E458 /* SaveActivityViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SaveActivityViewController.storyboard; sourceTree = "<group>"; };
 		469E5F2B1EE3F3D200193174 /* roadscape.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = roadscape.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		469E5F2E1EE3F3D200193174 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		469E5F301EE3F3D200193174 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		469E5F331EE3F3D200193174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		469E5F351EE3F3D200193174 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		469E5F381EE3F3D200193174 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		469E5F3A1EE3F3D200193174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -74,7 +70,7 @@
 		469E5F501EE3F3D200193174 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		46A96B041F89ACEB004E04C5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		46A96B061F89ADC0004E04C5 /* HomeViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeViewController.storyboard; sourceTree = "<group>"; };
-		46A96B081F89B0D5004E04C5 /* RSLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RSLocation.swift; sourceTree = "<group>"; };
+		46A96B081F89B0D5004E04C5 /* MyLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyLocation.swift; sourceTree = "<group>"; };
 		46A96B0A1F89B158004E04C5 /* LocationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationController.swift; sourceTree = "<group>"; };
 		46A96B0C1F89D67C004E04C5 /* RecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordViewController.swift; sourceTree = "<group>"; };
 		46A96B0E1F89D688004E04C5 /* RecordViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = RecordViewController.storyboard; sourceTree = "<group>"; };
@@ -151,24 +147,22 @@
 			isa = PBXGroup;
 			children = (
 				469E5F2E1EE3F3D200193174 /* AppDelegate.swift */,
-				469E5F301EE3F3D200193174 /* ViewController.swift */,
-				469E5F321EE3F3D200193174 /* Main.storyboard */,
-				469E5F351EE3F3D200193174 /* Assets.xcassets */,
 				469E5F371EE3F3D200193174 /* LaunchScreen.storyboard */,
 				469E5F3A1EE3F3D200193174 /* Info.plist */,
 				46A96B041F89ACEB004E04C5 /* HomeViewController.swift */,
 				46A96B061F89ADC0004E04C5 /* HomeViewController.storyboard */,
-				46A96B081F89B0D5004E04C5 /* RSLocation.swift */,
+				4656C4E21F8B50CC00E242D5 /* ActivityCollectionViewCell.swift */,
+				4656C4E41F8B50D700E242D5 /* ActivityCollectionViewCell.xib */,
+				46A96B081F89B0D5004E04C5 /* MyLocation.swift */,
 				46A96B0A1F89B158004E04C5 /* LocationController.swift */,
+				468B0DA41F89FACA00E6E458 /* ActivityController.swift */,
 				46A96B0C1F89D67C004E04C5 /* RecordViewController.swift */,
 				46A96B0E1F89D688004E04C5 /* RecordViewController.storyboard */,
-				468B0DA41F89FACA00E6E458 /* RecordController.swift */,
-				468B0DA61F8A180F00E6E458 /* SaveRecordViewController.swift */,
-				468B0DA81F8A181700E6E458 /* SaveRecordViewController.storyboard */,
-				4656C4E21F8B50CC00E242D5 /* RecordCollectionViewCell.swift */,
-				4656C4E41F8B50D700E242D5 /* RecordCollectionViewCell.xib */,
+				468B0DA61F8A180F00E6E458 /* SaveActivityViewController.swift */,
+				468B0DA81F8A181700E6E458 /* SaveActivityViewController.storyboard */,
 				4656C4E61F8B5AEC00E242D5 /* PlayViewController.swift */,
 				4656C4E81F8B5B0000E242D5 /* PlayViewController.storyboard */,
+				469E5F351EE3F3D200193174 /* Assets.xcassets */,
 			);
 			path = roadscape;
 			sourceTree = "<group>";
@@ -333,12 +327,11 @@
 			files = (
 				46A96B0F1F89D688004E04C5 /* RecordViewController.storyboard in Resources */,
 				4656C4E91F8B5B0000E242D5 /* PlayViewController.storyboard in Resources */,
-				468B0DA91F8A181700E6E458 /* SaveRecordViewController.storyboard in Resources */,
-				4656C4EA1F8B625600E242D5 /* RecordCollectionViewCell.xib in Resources */,
+				468B0DA91F8A181700E6E458 /* SaveActivityViewController.storyboard in Resources */,
+				4656C4EA1F8B625600E242D5 /* ActivityCollectionViewCell.xib in Resources */,
 				46A96B071F89ADC0004E04C5 /* HomeViewController.storyboard in Resources */,
 				469E5F391EE3F3D200193174 /* LaunchScreen.storyboard in Resources */,
 				469E5F361EE3F3D200193174 /* Assets.xcassets in Resources */,
-				469E5F341EE3F3D200193174 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,16 +494,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				469E5F311EE3F3D200193174 /* ViewController.swift in Sources */,
 				469E5F2F1EE3F3D200193174 /* AppDelegate.swift in Sources */,
-				468B0DA51F89FACA00E6E458 /* RecordController.swift in Sources */,
+				468B0DA51F89FACA00E6E458 /* ActivityController.swift in Sources */,
 				46A96B0B1F89B158004E04C5 /* LocationController.swift in Sources */,
 				46A96B0D1F89D67C004E04C5 /* RecordViewController.swift in Sources */,
-				46A96B091F89B0D5004E04C5 /* RSLocation.swift in Sources */,
+				46A96B091F89B0D5004E04C5 /* MyLocation.swift in Sources */,
 				4656C4E71F8B5AEC00E242D5 /* PlayViewController.swift in Sources */,
-				468B0DA71F8A180F00E6E458 /* SaveRecordViewController.swift in Sources */,
+				468B0DA71F8A180F00E6E458 /* SaveActivityViewController.swift in Sources */,
 				46A96B051F89ACEB004E04C5 /* HomeViewController.swift in Sources */,
-				4656C4E31F8B50CC00E242D5 /* RecordCollectionViewCell.swift in Sources */,
+				4656C4E31F8B50CC00E242D5 /* ActivityCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,14 +538,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		469E5F321EE3F3D200193174 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				469E5F331EE3F3D200193174 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		469E5F371EE3F3D200193174 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

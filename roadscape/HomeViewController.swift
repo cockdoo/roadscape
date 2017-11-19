@@ -4,9 +4,9 @@ import RealmSwift
 class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    let cellIdentifer = "RecordCollectionViewCell"
+    let cellIdentifer = "ActivityCollectionViewCell"
 
-    var records: Results<RecordTable>?
+    var activities: Results<ActivityTable>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,11 +20,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
 
     func getRecordsFromLocal() {
-        records = RecordController().getHomeItem()
+        activities = ActivityController().getActivities()
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.bounds.width, height: RecordCollectionViewCell.height)
+        return CGSize(width: view.bounds.width, height: ActivityCollectionViewCell.height)
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -32,19 +32,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        guard records != nil else { return 1 }
-        return records!.count
+        guard activities != nil else { return 1 }
+        return activities!.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: RecordCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifer, for: indexPath) as! RecordCollectionViewCell
-        cell.update(records![indexPath.row].title)
+        let cell: ActivityCollectionViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifer, for: indexPath) as! ActivityCollectionViewCell
+        cell.update(activities![indexPath.row].title)
         return cell
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let viewController: PlayViewController = UIStoryboard.init(name: "PlayViewController", bundle: nil).instantiateInitialViewController() as! PlayViewController
-        viewController.inject(records![indexPath.row])
+        viewController.inject(activities![indexPath.row])
         navigationController?.pushViewController(viewController, animated: true)
     }
 

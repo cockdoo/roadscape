@@ -19,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = viewController
 
         LocationController.sharedInstance.startUpdatingLocation()
-        print("hello, world!")
         return true
     }
 

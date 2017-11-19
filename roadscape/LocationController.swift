@@ -49,8 +49,8 @@ class LocationController: NSObject, CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         for location in locations {
-            RSLocation.lat = location.coordinate.latitude
-            RSLocation.lng = location.coordinate.longitude
+            MyLocation.lat = location.coordinate.latitude
+            MyLocation.lng = location.coordinate.longitude
         }
     }
 }

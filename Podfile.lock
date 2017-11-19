@@ -1,4 +1,9 @@
 PODS:
+  - GoogleMaps (2.5.0):
+    - GoogleMaps/Maps (= 2.5.0)
+  - GoogleMaps/Base (2.5.0)
+  - GoogleMaps/Maps (2.5.0):
+    - GoogleMaps/Base
   - Realm (2.10.2):
     - Realm/Headers (= 2.10.2)
   - Realm/Headers (2.10.2)
@@ -11,6 +16,7 @@ PODS:
   - RxSwift (4.0.0-beta.1)
 
 DEPENDENCIES:
+  - GoogleMaps
   - RealmSwift
   - RxBlocking (from `https://github.com/ReactiveX/RxSwift`, branch `rxswift4.0-swift4.0`)
   - RxCocoa (from `https://github.com/ReactiveX/RxSwift`, branch `rxswift4.0-swift4.0`)
@@ -39,12 +45,13 @@ CHECKOUT OPTIONS:
     :git: https://github.com/ReactiveX/RxSwift
 
 SPEC CHECKSUMS:
+  GoogleMaps: c087b8e5dfe87ca6ebf59adb9b4894a4146bec4f
   Realm: 0ef72b837fb67e9f4b098bac771ddd72c7fdbb69
   RealmSwift: 07a9ae0505091eda6b2ee7c190c3786d6e90a7b0
   RxBlocking: d5f5e62ff9ac07641a8d0214d9a8b00f1750aae5
   RxCocoa: 009b86b0b158d4a7e4a5fc29bbdc0688c44fa3bb
   RxSwift: 9488787dfac649ffc1c4fddf3a3b4d6823d0b392
 
-PODFILE CHECKSUM: 3557852da8b415a9ab63521978796563a608f008
+PODFILE CHECKSUM: b82da83bb6c0828b4d1cd52a2265cf40f912969e
 
 COCOAPODS: 1.2.1

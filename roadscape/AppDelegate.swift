@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMaps
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let viewController: UIViewController = storyboard.instantiateInitialViewController()!
         window?.rootViewController = viewController
 
+        GMSServices.provideAPIKey("AIzaSyD98ZiFjhMzERm8Gt10UboEAKi0R5ilBbw")
         LocationController.sharedInstance.startUpdatingLocation()
         return true
     }

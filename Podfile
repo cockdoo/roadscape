@@ -8,6 +8,7 @@ target 'roadscape' do
   pod 'RxSwift', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
   pod 'RxCocoa', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
   pod 'RealmSwift'
+  pod 'GoogleMaps'
 
 
   target 'roadscapeTests' do
@@ -16,6 +17,7 @@ target 'roadscape' do
     pod 'RxBlocking', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
     # pod 'RxTests', :git => 'https://github.com/ReactiveX/RxSwift', :branch => 'rxswift4.0-swift4.0'
     pod 'RealmSwift'
+  pod 'GoogleMaps'
   end
 
   target 'roadscapeUITests' do

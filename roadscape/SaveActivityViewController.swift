@@ -1,15 +1,20 @@
 import UIKit
 
-class SaveActivityViewController: UIViewController {
+protocol SaveActivityEventHandler {
+    func didSaveActivity()
+}
 
+class SaveActivityViewController: UIViewController {
+    private var saveActivityEventHandler: SaveActivityEventHandler!
     @IBOutlet weak var titleTextField: UITextField!
-    var activityController: ActivityController!
+    private var activityController: ActivityController!
 
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
-    func inject(_ activityController: ActivityController) {
+    func inject(handler: SaveActivityEventHandler, activityController: ActivityController) {
+        saveActivityEventHandler = handler
         self.activityController = activityController
     }
 
@@ -17,6 +22,7 @@ class SaveActivityViewController: UIViewController {
         guard titleTextField.text != "" else { return }
         activityController.saveActivity(title: titleTextField.text!)
 
+        saveActivityEventHandler.didSaveActivity()
         dismiss(animated: true, completion: nil)
     }
 }

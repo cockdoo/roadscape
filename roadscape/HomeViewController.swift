@@ -1,7 +1,7 @@
 import UIKit
 import RealmSwift
 
-class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, RecordEventHandler {
     
     @IBOutlet weak var collectionView: UICollectionView!
     let cellIdentifer = "ActivityCollectionViewCell"
@@ -16,10 +16,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
         let nib: UINib = UINib(nibName: cellIdentifer, bundle: nil)
         collectionView.register(nib, forCellWithReuseIdentifier: cellIdentifer)
 
-        getRecordsFromLocal()
+        getActivitiesFromLocal()
     }
 
-    func getRecordsFromLocal() {
+    func getActivitiesFromLocal() {
         activities = ActivityController().getActivities()
     }
 
@@ -43,14 +43,25 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let viewController: PlayViewController = UIStoryboard.init(name: "PlayViewController", bundle: nil).instantiateInitialViewController() as! PlayViewController
-        viewController.inject(activities![indexPath.row])
-        navigationController?.pushViewController(viewController, animated: true)
+        let playViewController: PlayViewController = UIStoryboard.init(name: "PlayViewController", bundle: nil).instantiateInitialViewController() as! PlayViewController
+        playViewController.inject(activities![indexPath.row])
+        navigationController?.pushViewController(playViewController, animated: true)
     }
 
     @IBAction func didTouchButton(_ sender: Any) {
-        let viewController = UIStoryboard(name: "RecordViewController", bundle: nil).instantiateInitialViewController()
-        viewController?.modalPresentationStyle = .overCurrentContext
-        present(viewController!, animated: true, completion: nil)
+        let recordViewController: RecordViewController = UIStoryboard(name: "RecordViewController", bundle: nil).instantiateInitialViewController() as! RecordViewController
+        recordViewController.inject(handler: self)
+        recordViewController.modalPresentationStyle = .overCurrentContext
+
+        let navigationController = UINavigationController(rootViewController: recordViewController)
+        present(navigationController, animated: true, completion: nil)
+    }
+
+    // MARK: RecordEventHandler
+
+    func didSaveActivity() {
+        print("saved!")
+        getActivitiesFromLocal()
+        collectionView.reloadData()
     }
 }

@@ -1,14 +1,19 @@
 import UIKit
 import MapKit
 
-class RecordViewController: UIViewController {
+protocol RecordEventHandler {
+    func didSaveActivity()
+}
+
+class RecordViewController: UIViewController, SaveActivityEventHandler {
     private var locationController: LocationController!
     private var activityController: ActivityController!
     private var currentRecordButtonType: recordButtonType!
     @IBOutlet weak var mapView: MKMapView!
-
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var finishButton: UIButton!
+
+    private var recordEventHandler: RecordEventHandler!
 
     enum recordButtonType {
         case start
@@ -29,6 +34,10 @@ class RecordViewController: UIViewController {
 
         locationController.requestAuthorization()
         locationController.locationManager.startUpdatingLocation()
+    }
+
+    func inject(handler: RecordEventHandler) {
+        recordEventHandler = handler
     }
 
     @IBAction func didTouchRecordButton(_ sender: Any) {
@@ -57,7 +66,13 @@ class RecordViewController: UIViewController {
 
     @IBAction func touchedFinishButton(_ sender: Any) {
         let saveActivityViewController: SaveActivityViewController = UIStoryboard(name: "SaveActivityViewController", bundle: nil).instantiateInitialViewController() as! SaveActivityViewController
-        saveActivityViewController.inject(activityController)
+        saveActivityViewController.inject(handler: self, activityController: activityController)
         navigationController?.pushViewController(saveActivityViewController, animated: true)
+    }
+
+    // MARK: SaveActivityEventHandler
+
+    func didSaveActivity() {
+        recordEventHandler.didSaveActivity()
     }
 }

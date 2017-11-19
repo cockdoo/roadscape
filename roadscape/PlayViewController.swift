@@ -2,8 +2,8 @@ import UIKit
 import MapKit
 
 class PlayViewController: UIViewController, MKMapViewDelegate {
-
     var activity: ActivityTable!
+
     @IBOutlet weak var mapView: MKMapView!
 
     override func viewDidLoad() {

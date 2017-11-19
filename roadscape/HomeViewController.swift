@@ -6,7 +6,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegateFlowLayout, 
     @IBOutlet weak var collectionView: UICollectionView!
     let cellIdentifer = "ActivityCollectionViewCell"
 
-    var activities: Results<ActivityTable>?
+    var activities: [ActivityTable]?
 
     override func viewDidLoad() {
         super.viewDidLoad()

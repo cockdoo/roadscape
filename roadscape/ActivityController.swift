@@ -84,8 +84,9 @@ class ActivityController: NSObject {
         return (realm.objects(ActivityTable.self).max(ofProperty: "id") ?? 0) + 1
     }
 
-    func getActivities() -> Results<ActivityTable> {
+    func getActivities() -> [ActivityTable] {
         let realm = try! Realm()
-        return realm.objects(ActivityTable.self)
+        let activities: [ActivityTable] = realm.objects(ActivityTable.self).reversed()
+        return activities
     }
 }
